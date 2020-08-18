@@ -9,11 +9,11 @@ public class Cache {
 
     private static ThreadLocal<HttpServletResponse> resp = new InheritableThreadLocal<HttpServletResponse>();
 
-    public static void cacheRequest(HttpServletRequest request){
+    public static void storeRequest(HttpServletRequest request){
         req.set(request);
     }
 
-    public static void cacheResponse(HttpServletResponse response){
+    public static void storeResponse(HttpServletResponse response){
         resp.set(response);
     }
 

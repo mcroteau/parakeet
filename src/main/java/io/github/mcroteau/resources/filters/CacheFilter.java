@@ -18,8 +18,8 @@ public class CacheFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
 
-        Cache.cacheRequest(req);
-        Cache.cacheResponse(resp);
+        Cache.storeRequest(req);
+        Cache.storeResponse(resp);
 
         chain.doFilter(request, response);
 
