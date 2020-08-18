@@ -4,4 +4,5 @@
 .project
 .settings
 *.properties
+*.releaseBackup
 output
