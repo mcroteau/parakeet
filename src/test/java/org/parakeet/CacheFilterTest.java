@@ -1,22 +1,22 @@
 package org.parakeet;
 
 import java.io.IOException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 
 import org.junit.jupiter.api.Test;
 import org.apache.log4j.Logger;
 import org.apache.log4j.BasicConfigurator;
-import org.parakeet.resources.access.Accessor;
+import org.mockito.Mockito;
 import org.parakeet.resources.access.impl.MockAccessor;
-import org.parakeet.utils.AuthRunnable;
 import org.parakeet.utils.AuthdIncrementor;
 
 import org.parakeet.resources.filters.CacheFilter;
 import org.parakeet.utils.TestConstants;
+import org.springframework.mock.web.MockHttpServletRequest;
+import org.springframework.mock.web.MockHttpServletResponse;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -29,18 +29,47 @@ public class CacheFilterTest {
     }
 
     @Test
-    public void stressTestDoFilter() throws ServletException, IOException, InterruptedException {
+    public void stressTestFilter() throws ServletException, IOException, InterruptedException {
 
         AuthdIncrementor incrementer = new AuthdIncrementor();
-        ExecutorService executorService = Executors.newCachedThreadPool();
+        CacheFilter filter = new CacheFilter();
+        MockAccessor mockAccessor = new MockAccessor();
 
         for(int n = 0; n < TestConstants.MOCK_REQUESTS; n++) {
-            executorService.execute(new AuthRunnable(incrementer));
+            Thread thread = new Thread(){
+                @Override
+                public void run(){
+                    try {
+                        Parakeet parakeet = new Parakeet(mockAccessor);
+
+                        MockHttpServletResponse mockResp = new MockHttpServletResponse();
+                        MockHttpServletRequest mockReq = new MockHttpServletRequest( );
+                        FilterChain mockFilterChain = Mockito.mock(FilterChain.class);
+                        FilterConfig mockFilterConfig = Mockito.mock(FilterConfig.class);
+
+                        filter.init(mockFilterConfig);
+                        filter.doFilter(mockReq, mockResp, mockFilterChain);
+
+                        parakeet.login(TestConstants.USER, TestConstants.PASS);
+
+                        if(parakeet.isAuthenticated()){
+                            incrementer.increment();
+                        }
+
+                        filter.destroy();
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (ServletException e) {
+                        e.printStackTrace();
+                    }
+                }
+            };
+            thread.start();
+            thread.join();
         }
 
-        executorService.shutdown();
-        executorService.awaitTermination(1, TimeUnit.MINUTES);
-
+        log.info(incrementer.getCount() + " .");
         assertTrue(incrementer.getCount() == TestConstants.MOCK_REQUESTS);
     }
 
