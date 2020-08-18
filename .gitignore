@@ -3,6 +3,5 @@
 .classpath
 .project
 .settings
+*.properties
 output
-memory
-List.md
