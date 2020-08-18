@@ -3,9 +3,11 @@
 	<groupId>io.github.mcroteau</groupId>
 	<artifactId>parakeet</artifactId>
 	<packaging>jar</packaging>
-	<version>0.1</version>
+	<version>0.1-SNAPSHOT</version>
+
 	<name>parakeet</name>
-	<url>http://maven.apache.org</url>
+	<description>Parakeet is a small security framework that allows for quick securing of J2ee applications.</description>
+	<url>https://mcroteau.github.io/Parakeet/</url>
 
 	<licenses>
 		<license>
@@ -14,6 +16,15 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
+
+	<developers>
+		<developer>
+			<name>Mike Croteau</name>
+			<email>croteau.mike@gmail.com</email>
+			<organization>IOC</organization>
+			<organizationUrl>http://www.goioc.xyz</organizationUrl>
+		</developer>
+	</developers>
 
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
