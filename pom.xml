@@ -3,7 +3,7 @@
 	<groupId>io.github.mcroteau</groupId>
 	<artifactId>parakeet</artifactId>
 	<packaging>jar</packaging>
-	<version>0.1</version>
+	<version>0.1-SNAPSHOT</version>
 	<name>parakeet</name>
 	<url>http://maven.apache.org</url>
 
