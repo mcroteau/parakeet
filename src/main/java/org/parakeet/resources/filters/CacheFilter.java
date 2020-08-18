@@ -1,6 +1,6 @@
 package org.parakeet.resources.filters;
 
-import org.parakeet.resources.Resource;
+import org.parakeet.resources.Cache;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -18,8 +18,8 @@ public class CacheFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
 
-        Resource.cacheRequest(req);
-        Resource.cacheResponse(resp);
+        Cache.cacheRequest(req);
+        Cache.cacheResponse(resp);
 
         System.out.println("do filter " + req.toString());
 

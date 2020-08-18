@@ -1,6 +1,7 @@
 package org.parakeet.resources.access.impl;
 
-import org.parakeet.resources.Resource;
+import org.parakeet.resources.Cache;
+import org.parakeet.resources.Constants;
 import org.parakeet.resources.access.Accessor;
 
 import java.util.HashSet;
@@ -18,7 +19,7 @@ public class MockAccessor implements Accessor {
 
     @Override
     public String getPassword(String user) {
-        return Resource.hash(MOCK_PASS);
+        return Constants.hash(MOCK_PASS);
     }
 
     @Override

@@ -1,12 +1,14 @@
 package org.parakeet;
 
-import org.parakeet.resources.Resource;
+import org.parakeet.resources.Cache;
+import org.parakeet.resources.Constants;
 import org.parakeet.resources.access.Accessor;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.lang.invoke.ConstantCallSite;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
@@ -22,7 +24,7 @@ public class Parakeet {
     }
 
     public String getUser(){
-        HttpServletRequest req = Resource.getRequest();
+        HttpServletRequest req = Cache.getRequest();
         HttpSession session = req.getSession();
 
         if(session != null){
@@ -33,13 +35,13 @@ public class Parakeet {
 
 
     public boolean login(String username, String password){
-        String hashedPassword = Resource.hash(password);
+        String hashedPassword = Constants.hash(password);
         String storedPassword = accessor.getPassword(username);
 
         if(!isAuthenticated() &&
                 storedPassword.equals(hashedPassword)){
 
-            HttpServletRequest req = Resource.getRequest();
+            HttpServletRequest req = Cache.getRequest();
 
             HttpSession oldSession = req.getSession(false);
             if(oldSession != null){
@@ -59,17 +61,10 @@ public class Parakeet {
     }
 
 
-    private void scavengeForCookies(HttpServletRequest req, HttpServletResponse resp) {
-        if(containsCookie(req)){
-            System.out.println("\n\nFOUND ONE!!!!!!\n\n");
-            expireCookie(req, resp);
-        }
-    }
-
 
     public boolean logout(){
-        HttpServletRequest req = Resource.getRequest();
-        HttpServletResponse resp = Resource.getResponse();
+        HttpServletRequest req = Cache.getRequest();
+        HttpServletResponse resp = Cache.getResponse();
         HttpSession session = req.getSession();
 
         if(session != null){
@@ -84,8 +79,7 @@ public class Parakeet {
     }
 
     public boolean isAuthenticated(){
-        System.out.println("is authenticated");
-        HttpServletRequest req = Resource.getRequest();
+        HttpServletRequest req = Cache.getRequest();
         if(req != null) {
             HttpSession session = req.getSession(false);
 
@@ -98,7 +92,7 @@ public class Parakeet {
 
 
     private void expireCookie(HttpServletRequest req, HttpServletResponse resp){
-        Cookie cookie = new Cookie(Resource.COOKIE, "");
+        Cookie cookie = new Cookie(Constants.COOKIE, "");
         cookie.setMaxAge(0);
         resp.addCookie(cookie);
     }
@@ -107,9 +101,11 @@ public class Parakeet {
 
     public boolean containsCookie(HttpServletRequest req){
         Cookie[] cookies = req.getCookies();
-        for(Cookie cookie : cookies){
-            if(cookie.getName().equals(Resource.COOKIE)){
-                return true;
+        if(cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals(Constants.COOKIE)) {
+                    return true;
+                }
             }
         }
         return false;
