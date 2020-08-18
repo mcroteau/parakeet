@@ -6,10 +6,11 @@
 	<packaging>jar</packaging>
 	<version>0.1</version>
 	<name>parakeet</name>
+	<url>http://maven.apache.org</url>
 
 
 	<properties>
-		<junit.version>4.12</junit.version>
+		<junit.jupiter.version>5.3.1</junit.jupiter.version>
 		<mockito.version>1.10.19</mockito.version>
 		<servlet.api.version>4.0.1</servlet.api.version>
 		<spring.mock.version>2.0.8</spring.mock.version>
@@ -19,33 +20,45 @@
 
 	<dependencies>
 
-		<dependency>
-	    	<groupId>junit</groupId>
-	    	<artifactId>junit</artifactId>
-	    	<version>${junit.version}</version>
-	    	<scope>test</scope>
-	  	</dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.3.1</version>
+            <scope>test</scope>
+        </dependency>
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<version>${servlet.api.version}</version>
+			<version>4.0.1</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-all</artifactId>
-			<version>${mockito.version}</version>
+			<version>1.10.19</version>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-mock</artifactId>
-			<version>${spring.mock.version}</version>
+			<artifactId>spring-core</artifactId>
+			<version>5.2.5.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>5.2.5.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	
 	

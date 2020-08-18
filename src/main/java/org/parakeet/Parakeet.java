@@ -40,9 +40,6 @@ public class Parakeet {
                 storedPassword.equals(hashedPassword)){
 
             HttpServletRequest req = Resource.getRequest();
-            HttpServletResponse resp = Resource.getResponse();
-
-            scavengeForCookies(req, resp);
 
             HttpSession oldSession = req.getSession(false);
             if(oldSession != null){
@@ -87,11 +84,12 @@ public class Parakeet {
     }
 
     public boolean isAuthenticated(){
+        System.out.println("is authenticated");
         HttpServletRequest req = Resource.getRequest();
         if(req != null) {
             HttpSession session = req.getSession(false);
 
-            if (session != null && containsCookie(req) && sessions.containsKey(session.getId())) {
+            if (session != null && sessions.containsKey(session.getId())) {
                 return true;
             }
         }

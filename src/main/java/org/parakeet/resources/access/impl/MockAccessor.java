@@ -1,5 +1,6 @@
 package org.parakeet.resources.access.impl;
 
+import org.parakeet.resources.Resource;
 import org.parakeet.resources.access.Accessor;
 
 import java.util.HashSet;
@@ -7,7 +8,7 @@ import java.util.Set;
 
 public class MockAccessor implements Accessor {
 
-    private static String MOCK_PASS     = "password";
+    private static String MOCK_PASS     = "birdyah";
 
     private static String MOCK_ADMIN    = "ADMIN_ROLE";
     private static String MOCK_CUSTOMER = "CUSTOMER_ROLE";
@@ -17,7 +18,7 @@ public class MockAccessor implements Accessor {
 
     @Override
     public String getPassword(String user) {
-        return MOCK_PASS;
+        return Resource.hash(MOCK_PASS);
     }
 
     @Override
