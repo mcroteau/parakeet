@@ -21,8 +21,6 @@ public class CacheFilter implements Filter {
         Cache.cacheRequest(req);
         Cache.cacheResponse(resp);
 
-        System.out.println("do filter " + req.toString());
-
         chain.doFilter(request, response);
 
     }
