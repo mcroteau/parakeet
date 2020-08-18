@@ -1,4 +1,4 @@
-package xyz.ioc;
+package io.github.mcroteau;
 
 import java.io.IOException;
 
@@ -10,13 +10,14 @@ import org.junit.jupiter.api.Test;
 import org.apache.log4j.Logger;
 import org.apache.log4j.BasicConfigurator;
 import org.mockito.Mockito;
-import xyz.ioc.resources.access.impl.MockAccessor;
-import xyz.ioc.utils.AuthdIncrementor;
-
-import xyz.ioc.resources.filters.CacheFilter;
-import xyz.ioc.utils.TestConstants;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
+
+import io.github.mcroteau.resources.access.impl.MockAccessor;
+import io.github.mcroteau.resources.filters.CacheFilter;
+
+import io.github.mcroteau.utils.AuthdIncrementor;
+import io.github.mcroteau.utils.TestConstants;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

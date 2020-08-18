@@ -1,4 +1,4 @@
-package xyz.ioc.utils;
+package io.github.mcroteau.utils;
 
 public class TestConstants {
 
