@@ -179,7 +179,7 @@
 		<connection>scm:git:git://github.com/mcroteau/Parakeet.git</connection>
 		<developerConnection>scm:git:git@github.com:mcroteau/Parakeet.git</developerConnection>
 		<url>https://github.com/mcroteau/Parakeet</url>
-		<tag>HEAD</tag>
+		<tag>v0.1</tag>
 	</scm>
 
 	<distributionManagement>
