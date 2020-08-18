@@ -1,4 +1,4 @@
-package org.parakeet.resources.access;
+package xyz.ioc.resources.access;
 
 import java.util.Set;
 

@@ -1,8 +1,7 @@
-package org.parakeet.resources.access.impl;
+package xyz.ioc.resources.access.impl;
 
-import org.parakeet.resources.Cache;
-import org.parakeet.resources.Constants;
-import org.parakeet.resources.access.Accessor;
+import xyz.ioc.resources.Constants;
+import xyz.ioc.resources.access.Accessor;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,14 +1,13 @@
-package org.parakeet;
+package xyz.ioc;
 
-import org.parakeet.resources.Cache;
-import org.parakeet.resources.Constants;
-import org.parakeet.resources.access.Accessor;
+import xyz.ioc.resources.Cache;
+import xyz.ioc.resources.Constants;
+import xyz.ioc.resources.access.Accessor;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.lang.invoke.ConstantCallSite;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;

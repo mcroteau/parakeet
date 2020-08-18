@@ -1,6 +1,6 @@
-package org.parakeet.resources.filters;
+package xyz.ioc.resources.filters;
 
-import org.parakeet.resources.Cache;
+import xyz.ioc.resources.Cache;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;

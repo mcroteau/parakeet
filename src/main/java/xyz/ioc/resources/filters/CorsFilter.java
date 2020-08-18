@@ -1,4 +1,4 @@
-package org.parakeet.resources.filters;
+package xyz.ioc.resources.filters;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;

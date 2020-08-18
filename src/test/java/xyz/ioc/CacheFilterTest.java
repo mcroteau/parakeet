@@ -1,4 +1,4 @@
-package org.parakeet;
+package xyz.ioc;
 
 import java.io.IOException;
 
@@ -10,11 +10,11 @@ import org.junit.jupiter.api.Test;
 import org.apache.log4j.Logger;
 import org.apache.log4j.BasicConfigurator;
 import org.mockito.Mockito;
-import org.parakeet.resources.access.impl.MockAccessor;
-import org.parakeet.utils.AuthdIncrementor;
+import xyz.ioc.resources.access.impl.MockAccessor;
+import xyz.ioc.utils.AuthdIncrementor;
 
-import org.parakeet.resources.filters.CacheFilter;
-import org.parakeet.utils.TestConstants;
+import xyz.ioc.resources.filters.CacheFilter;
+import xyz.ioc.utils.TestConstants;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 

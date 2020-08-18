@@ -1,4 +1,4 @@
-package org.parakeet.resources;
+package xyz.ioc.resources;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

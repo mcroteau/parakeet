@@ -1,11 +1,7 @@
-package org.parakeet.resources;
+package xyz.ioc.resources;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.*;
 
 public class Cache {
 
