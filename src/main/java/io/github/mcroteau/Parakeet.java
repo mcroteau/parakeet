@@ -1,8 +1,8 @@
-package xyz.ioc;
+package io.github.mcroteau;
 
-import xyz.ioc.resources.Cache;
-import xyz.ioc.resources.Constants;
-import xyz.ioc.resources.access.Accessor;
+import io.github.mcroteau.resources.Cache;
+import io.github.mcroteau.resources.Constants;
+import io.github.mcroteau.resources.access.Accessor;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

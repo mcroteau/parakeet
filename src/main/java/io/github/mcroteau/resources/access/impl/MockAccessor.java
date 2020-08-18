@@ -1,7 +1,7 @@
-package xyz.ioc.resources.access.impl;
+package io.github.mcroteau.resources.access.impl;
 
-import xyz.ioc.resources.Constants;
-import xyz.ioc.resources.access.Accessor;
+import io.github.mcroteau.resources.Constants;
+import io.github.mcroteau.resources.access.Accessor;
 
 import java.util.HashSet;
 import java.util.Set;

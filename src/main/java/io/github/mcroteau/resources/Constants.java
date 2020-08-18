@@ -1,4 +1,4 @@
-package xyz.ioc.resources;
+package io.github.mcroteau.resources;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

@@ -1,4 +1,4 @@
-package xyz.ioc.resources;
+package io.github.mcroteau.resources;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

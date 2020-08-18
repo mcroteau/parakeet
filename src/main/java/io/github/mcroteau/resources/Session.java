@@ -1,4 +1,4 @@
-package xyz.ioc.resources;
+package io.github.mcroteau.resources;
 
 public class Session {
 

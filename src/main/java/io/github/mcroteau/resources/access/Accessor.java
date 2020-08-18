@@ -1,4 +1,4 @@
-package xyz.ioc.resources.access;
+package io.github.mcroteau.resources.access;
 
 import java.util.Set;
 
