@@ -67,6 +67,7 @@ public class Parakeet {
         HttpSession session = req.getSession();
 
         if(session != null){
+            session.removeAttribute("user");
             if(sessions.containsKey(session.getId())){
                 sessions.remove(session.getId());
             }
