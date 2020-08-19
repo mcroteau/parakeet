@@ -30,7 +30,7 @@ Update `web.xml`, add CacheFilter declaration:
 </filter-mapping>
 ```
 
-Create an Accessor. What is an accessor? It is the class
+Create an Accessor, the class
 that provides data to Parakeet.
 
 Example:
