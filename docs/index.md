@@ -86,7 +86,9 @@ or if spring project define your beans as such:
 Now you can use:
 
 `parakeet.isAuthenticated()`
+
 `parakeet.hasRole(role)`
+
 `parakeet.hasPermission(permission)`
 
-throughout your project. See, we told you it was cute.
+See, we told you it was cute.
