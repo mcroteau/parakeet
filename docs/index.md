@@ -69,7 +69,7 @@ public class JdbcAccessor implements Accessor {
 
 Finally wire it up either by:
 
-`Parakeet parakeet = new Parakeet(new JdcbAccessor);`
+`Parakeet parakeet = new Parakeet(new JdcbAccessor());`
 
 or if spring project define your beans as such:
 
