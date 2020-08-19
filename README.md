@@ -2,7 +2,7 @@
 
 ## A cute J2ee security framework
 
-Parakeet is a small security framework that allows for quick securing of J2ee applications.
+Parakeet is a small Open Source security plugin that allows for quick securing of J2ee applications.
 
 #### Installation
 
