@@ -91,13 +91,3 @@ Now you can use:
 `parakeet.hasPermission(permission)`
 
 See, we told you it was cute.
-
-
-
-
-
-
-
-
-
-.
