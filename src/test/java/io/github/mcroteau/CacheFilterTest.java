@@ -44,7 +44,7 @@ public class CacheFilterTest {
                         Parakeet parakeet = new Parakeet(mockAccessor);
 
                         MockHttpServletResponse mockResp = new MockHttpServletResponse();
-                        MockHttpServletRequest mockReq = new MockHttpServletRequest( );
+                        MockHttpServletRequest mockReq = new MockHttpServletRequest();
                         FilterChain mockFilterChain = Mockito.mock(FilterChain.class);
                         FilterConfig mockFilterConfig = Mockito.mock(FilterConfig.class);
 
