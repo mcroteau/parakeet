@@ -27,7 +27,7 @@ Update `web.xml`, add CacheFilter declaration:
 ```
 
 Create an Accessor. What is an accessor? It is the class
-that will provide data to Parakeet. Data includes, password
+that will provide data to Parakeet. Data includes, `password`
 `Set<String> roles` and `Set<String> permissions`.
 
 Example:
