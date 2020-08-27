@@ -86,12 +86,20 @@ or if spring project define your beans as such:
 
 ### Your project is configured. 
 
-Now you can use:
+Now you can use can authenticate your user via :
+
+`parakeet.login()`
+
+And you'll have access to the following methods:
 
 `parakeet.isAuthenticated()`
 
 `parakeet.hasRole(role)`
 
 `parakeet.hasPermission(permission)`
+
+To log out:
+
+`parakeet.logout()`
 
 See, we told you it was cute.
