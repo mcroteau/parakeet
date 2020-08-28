@@ -1,8 +1,8 @@
-.iml
 .idea
 .classpath
 .project
 .settings
+*.iml
 *.properties
 *.releaseBackup
 *.asc

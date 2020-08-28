@@ -10,7 +10,7 @@ public class ParakeetFactory {
 
     public ParakeetFactory(){
         mockAccessor = new MockAccessor();
-        parakeet = new ParakeetFactory(mockAccessor);
+        parakeet = new Parakeet(mockAccessor);
     }
 
     public Parakeet getParakeet(){
