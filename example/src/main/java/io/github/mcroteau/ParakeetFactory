@@ -1,8 +1,8 @@
 package io.github.mcroteau;
 
 import io.github.mcroteau.Parakeet;
-import io.github.mcroteau.accessor.MockAccessor;
 import io.github.mcroteau.resources.access.Accessor;
+import io.github.mcroteau.resources.access.impl.MockAccessor;
 
 public class ParakeetFactory {
 
