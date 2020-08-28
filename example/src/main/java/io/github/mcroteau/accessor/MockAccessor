@@ -1,0 +1,7 @@
+package io.github.mcroteau.accessor;
+
+import io.github.mcroteau.parakeet.access.Accessor;
+
+public class MockAccessor implements Accessor {
+
+}

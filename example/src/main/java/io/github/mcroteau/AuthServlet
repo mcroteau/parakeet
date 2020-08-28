@@ -1,0 +1,27 @@
+package io.github.mcroteau.web;
+
+@WebServlet(name="auth", urlPatterns="/auth")
+public class AuthServlet extends HttpServlet {
+
+    ParakeetFactory parakeetFactory;
+
+    public AuthServlet(){
+        parakeetFactory = new ParakeetFactory();
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        Parakeet parakeet = parakeetFactory.getParakeet();
+        String username = request.getAttribute("username");
+        String password = request.getAttribute("password");
+
+        if(parakeet.login(username, password)){
+            request.getRequestDispatcher("/jsp/secure.jsp");
+        }
+        else{
+            request.getRequestDispatcher("/jsp/auth.jsp");
+        }
+    }
+
+}
