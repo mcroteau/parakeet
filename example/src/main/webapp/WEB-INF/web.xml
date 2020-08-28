@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app>
 
+    <servlet>
+        <servlet-name>AuthServlet</servlet-name>
+        <servlet-class>io.github.mcroteau.AuthServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AuthServlet</servlet-name>
+        <url-pattern>/auth</url-pattern>
+    </servlet-mapping>
+
     <filter>
         <filter-name>Parakeet</filter-name>
         <filter-class>io.github.mcroteau.resources.filters.CacheFilter</filter-class>
