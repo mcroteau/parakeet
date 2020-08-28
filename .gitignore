@@ -6,6 +6,6 @@
 *.properties
 *.releaseBackup
 *.asc
+output
 example/output
 artifact/output
-sample/output
