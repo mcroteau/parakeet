@@ -3,7 +3,7 @@
 
     <servlet>
         <servlet-name>AuthServlet</servlet-name>
-        <servlet-class>io.github.mcroteau.AuthServlet</servlet-class>
+        <servlet-class>io.github.mcroteau.web.SigninServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

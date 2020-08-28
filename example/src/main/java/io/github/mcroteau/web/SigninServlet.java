@@ -1,4 +1,6 @@
-package io.github.mcroteau;
+package io.github.mcroteau.web;
+
+import io.github.mcroteau.ParakeetFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,24 +11,23 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-public class AuthServlet extends HttpServlet {
+public class SigninServlet extends HttpServlet {
 
     ParakeetFactory parakeetFactory;
 
-    public AuthServlet(){
-        parakeetFactory = new ParakeetFactory();
+    public SigninServlet(){
+        ParakeetFactory parakeetFactory = (ParakeetFactory) getServletContext().getAttribute("parakeetFactory");
+        if(parakeetFactory == null) {
+            parakeetFactory = new ParakeetFactory();
+            getServletContext().setAttribute("parakeetFactory", parakeetFactory);
+        }
     }
 
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // Set response content type
         response.setContentType("text/html");
-
-        // Actual logic goes here.
-        PrintWriter out = response.getWriter();
-        out.println("<h1>Hello</h1>");
     }
 
 
