@@ -5,6 +5,12 @@
     <packaging>war</packaging>
     <version>0.2-SNAPSHOT</version>
 
+    <parent>
+        <groupId>io.github.mcroteau</groupId>
+        <artifactId>parent-modules</artifactId>
+        <version>0.2-SNAPSHOT</version>
+    </parent>
+
     <dependencies>
 
         <dependency>
@@ -23,15 +29,28 @@
 
     <build>
 
+
         <defaultGoal>package</defaultGoal>
-        <finalName>${project.artifactId}-${project.version}</finalName>
 
         <directory>output</directory>
-        <sourceDirectory>src/main/java</sourceDirectory>
         <outputDirectory>output/classes</outputDirectory>
 
+        <finalName>${project.artifactId}-${project.version}</finalName>
+        <testOutputDirectory>output/test-classes</testOutputDirectory>
+        <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
+        <scriptSourceDirectory>src/main/scripts</scriptSourceDirectory>
+        <testSourceDirectory>src/test/java</testSourceDirectory>
 
         <plugins>
+
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
 
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
@@ -40,7 +59,7 @@
 
                 <configuration>
                     <webApp>
-                        <contextPath>/p</contextPath>
+                        <contextPath>/b</contextPath>
                     </webApp>
                 </configuration>
             </plugin>

@@ -1,4 +1,4 @@
-package io.github.mcroteau.web;
+package io.github.mcroteau;
 
 import io.github.mcroteau.Parakeet;
 import io.github.mcroteau.ParakeetFactory;
@@ -20,7 +20,15 @@ public class AuthServlet extends HttpServlet {
     }
 
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.doGet(req, resp);
+        Parakeet parakeet = parakeetFactory.getParakeet();
+
+    }
+
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        super.doPost(request, response);
 
         Parakeet parakeet = parakeetFactory.getParakeet();
         String username = (String) request.getAttribute("username");

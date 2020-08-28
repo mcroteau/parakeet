@@ -1,7 +1,44 @@
 package io.github.mcroteau.accessor;
 
-import io.github.mcroteau.parakeet.access.Accessor;
+import io.github.mcroteau.resources.Constants;
+import io.github.mcroteau.resources.access.Accessor;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class MockAccessor implements Accessor {
 
+    private static final String MOCK_PASS     = "birdyah";
+
+    private static final String MOCK_ADMIN    = "ADMIN_ROLE";
+    private static final String MOCK_CUSTOMER = "CUSTOMER_ROLE";
+
+    private static final String MOCK_ACCOUNT_PERMISSION = "account:maintenance:1";
+    private static final String MOCK_POST_PERMISSION = "post:maintenance:3";
+
+    /**
+     * getPassword: Returns stored hashed password.
+     * This example hashes on the fly, but in a normal environment
+     * the this method would return a stored hashed password.
+     *
+     * @param user the username
+     * @return password
+     */
+    public String getPassword(String user) {
+        return Constants.hash(MOCK_PASS);
+    }
+
+    public Set<String> getRoles(String user) {
+        Set<String> roles = new HashSet<String>();
+        roles.add(MOCK_ADMIN);
+        roles.add(MOCK_CUSTOMER);
+        return roles;
+    }
+
+    public Set<String> getPermissions(String user) {
+        Set<String> permissions = new HashSet<String>();
+        permissions.add(MOCK_ACCOUNT_PERMISSION);
+        permissions.add(MOCK_POST_PERMISSION);
+        return permissions;
+    }
 }
