@@ -23,7 +23,7 @@ public class SecuredServlet extends HttpServlet {
         ParakeetFactory parakeetFactory = (ParakeetFactory) context.getAttribute("parakeetFactory");
         if(parakeetFactory == null) {
             parakeetFactory = new ParakeetFactory();
-            getServletContext().setAttribute("parakeetFactory", parakeetFactory);
+            context.setAttribute("parakeetFactory", parakeetFactory);
             parakeet = parakeetFactory.getParakeet();
         }
     }
@@ -31,6 +31,7 @@ public class SecuredServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+
 
         if(parakeet.isAuthenticated()){
             req.getRequestDispatcher("/jsp/secured.jsp").forward(req, resp);
