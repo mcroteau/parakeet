@@ -10,7 +10,7 @@
 
     <short-name>Parakeet</short-name>
 
-    <uri>https://github.com/mcroteau/Parakeet/taglib/development/src/parakeet.tld</uri>
+    <uri>https://raw.githubusercontent.com/mcroteau/Parakeet/taglib/artifact/src/parakeet.tld</uri>
 
     <description>Parakeet Tag Library</description>
 
