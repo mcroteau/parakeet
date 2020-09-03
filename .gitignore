@@ -6,6 +6,7 @@
 *.properties
 *.releaseBackup
 *.asc
+*.DS_Store
 output
 example/output
 artifact/output

@@ -84,6 +84,11 @@
 			<version>1.2.16</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>5.2.3.RELEASE</version>
+		</dependency>
 	</dependencies>
 
 		<profiles>
@@ -118,10 +123,9 @@
 
 	<build>
 
-        <directory>../output</directory>
+        <directory>output</directory>
 		<defaultGoal>package</defaultGoal>
         <finalName>${project.artifactId}-${project.version}</finalName>
-
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

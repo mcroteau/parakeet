@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class AuthServlet extends HttpServlet {
+
     ParakeetFactory parakeetFactory;
 
     public AuthServlet(){

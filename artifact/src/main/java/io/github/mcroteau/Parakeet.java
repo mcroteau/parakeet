@@ -48,8 +48,8 @@ public class Parakeet {
             }
 
             HttpSession httpSession = req.getSession(true);
-            httpSession.setAttribute("user", username);
-
+            httpSession.setAttribute(Constants.USER_LOOKUP, username);
+            httpSession.setAttribute(Constants.ACCESSOR_LOOKUP, accessor);
             sessions.put(httpSession.getId(), httpSession);
 
             return true;
@@ -67,7 +67,8 @@ public class Parakeet {
         HttpSession session = req.getSession();
 
         if(session != null){
-            session.removeAttribute("user");
+            session.removeAttribute(Constants.USER_LOOKUP);
+            session.removeAttribute(Constants.ACCESSOR_LOOKUP);
             if(sessions.containsKey(session.getId())){
                 sessions.remove(session.getId());
             }
