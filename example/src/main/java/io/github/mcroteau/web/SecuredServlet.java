@@ -24,9 +24,11 @@ public class SecuredServlet extends HttpServlet {
         if(parakeetFactory == null) {
             parakeetFactory = new ParakeetFactory();
             context.setAttribute("parakeetFactory", parakeetFactory);
-            parakeet = parakeetFactory.getParakeet();
         }
+        parakeet = parakeetFactory.getParakeet();
     }
+
+
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)

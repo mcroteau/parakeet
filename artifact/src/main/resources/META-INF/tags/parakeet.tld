@@ -15,7 +15,7 @@
     <description>Parakeet Tag Library</description>
 
     <tag>
-        <name>anonymousTag</name>
+        <name>anonymous</name>
         <tag-class>io.github.mcroteau.resources.tags.AnonymousTag</tag-class>
         <body-content>JSP</body-content>
         <description></description>
@@ -29,9 +29,9 @@
     </tag>
 
     <tag>
-        <name>usernameTag</name>
+        <name>username</name>
         <tag-class>io.github.mcroteau.resources.tags.UsernameTag</tag-class>
-        <body-content>JSP</body-content>
+        <body-content>empty</body-content>
         <description></description>
     </tag>
 

@@ -26,10 +26,9 @@ public class AuthenticatedTag extends TagSupport {
 
             if(session != null) {
                 ServletContext context = req.getServletContext();
-                Accessor accessor = (Accessor) context.getAttribute(Constants.ACCESSOR_LOOKUP);
-                Parakeet parakeet = new Parakeet(accessor);
+                Parakeet parakeet = (Parakeet) context.getAttribute(Constants.PARAKEET_LOOKUP);
 
-                if(accessor == null) return TagSupport.SKIP_BODY;
+                if(parakeet == null) return TagSupport.SKIP_BODY;
 
                 if(parakeet.isAuthenticated()){
                     return TagSupport.EVAL_BODY_INCLUDE;

@@ -24,8 +24,8 @@ public class AuthServlet extends HttpServlet {
         if(parakeetFactory == null) {
             parakeetFactory = new ParakeetFactory();
             context.setAttribute("parakeetFactory", parakeetFactory);
-            parakeet = parakeetFactory.getParakeet();
         }
+        parakeet = parakeetFactory.getParakeet();
     }
 
     @Override
