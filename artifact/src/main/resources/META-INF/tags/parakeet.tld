@@ -21,5 +21,11 @@
         <description></description>
     </tag>
 
+    <tag>
+        <name>notAuthenticated</name>
+        <tag-class>io.github.mcroteau.resources.tagsTag</tag-class>
+        <body-content>JSP</body-content>
+        <description></description>
+    </tag>
 
 </taglib>

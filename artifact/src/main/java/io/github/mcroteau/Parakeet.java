@@ -4,6 +4,8 @@ import io.github.mcroteau.resources.Cache;
 import io.github.mcroteau.resources.Constants;
 import io.github.mcroteau.resources.access.Accessor;
 
+import javax.servlet.Servlet;
+import javax.servlet.ServletContext;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -49,7 +51,9 @@ public class Parakeet {
 
             HttpSession httpSession = req.getSession(true);
             httpSession.setAttribute(Constants.USER_LOOKUP, username);
-            httpSession.setAttribute(Constants.ACCESSOR_LOOKUP, accessor);
+
+            ServletContext context = req.getServletContext();
+            context.setAttribute(Constants.ACCESSOR_LOOKUP, accessor);
             sessions.put(httpSession.getId(), httpSession);
 
             return true;
@@ -68,7 +72,8 @@ public class Parakeet {
 
         if(session != null){
             session.removeAttribute(Constants.USER_LOOKUP);
-            session.removeAttribute(Constants.ACCESSOR_LOOKUP);
+            ServletContext context = req.getServletContext();
+            context.removeAttribute(Constants.ACCESSOR_LOOKUP);
             if(sessions.containsKey(session.getId())){
                 sessions.remove(session.getId());
             }

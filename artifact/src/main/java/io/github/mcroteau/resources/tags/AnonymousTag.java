@@ -13,12 +13,13 @@ import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.TagSupport;
 import java.io.IOException;
 
-public class AuthenticatedTag extends TagSupport {
+public class AnonymousTag extends TagSupport {
 
     @Override
     public int doStartTag() throws JspException {
 
         try {
+
             JspWriter out = pageContext.getOut();
 
             HttpServletRequest req = (HttpServletRequest) pageContext.getRequest();
@@ -27,23 +28,24 @@ public class AuthenticatedTag extends TagSupport {
             if(session != null) {
                 ServletContext context = req.getServletContext();
                 Accessor accessor = (Accessor) context.getAttribute(Constants.ACCESSOR_LOOKUP);
+
+                if(accessor == null) return TagSupport.EVAL_BODY_INCLUDE;
+
                 Parakeet parakeet = new Parakeet(accessor);
 
-                if(accessor == null) return TagSupport.SKIP_BODY;
-
                 if(parakeet.isAuthenticated()){
-                    return TagSupport.EVAL_BODY_INCLUDE;
-                }else{
                     return TagSupport.SKIP_BODY;
+                }else{
+                    return TagSupport.EVAL_BODY_INCLUDE;
                 }
 
             }else{
-                return TagSupport.SKIP_BODY;
+                return TagSupport.EVAL_BODY_INCLUDE;
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return TagSupport.SKIP_BODY;
+        return TagSupport.EVAL_BODY_INCLUDE;
     }
 }

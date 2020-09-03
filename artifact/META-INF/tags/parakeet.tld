@@ -21,5 +21,18 @@
         <description></description>
     </tag>
 
+    <tag>
+        <name>anonymousTag</name>
+        <tag-class>io.github.mcroteau.resources.tags.AnonymousTag</tag-class>
+        <body-content>JSP</body-content>
+        <description></description>
+    </tag>
+
+    <tag>
+        <name>usernameTag</name>
+        <tag-class>io.github.mcroteau.resources.tags.UsernameTag</tag-class>
+        <body-content>JSP</body-content>
+        <description></description>
+    </tag>
 
 </taglib>
