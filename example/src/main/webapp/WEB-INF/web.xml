@@ -2,13 +2,35 @@
 <web-app>
 
     <servlet>
-        <servlet-name>AuthServlet</servlet-name>
+        <servlet-name>SigninServlet</servlet-name>
         <servlet-class>io.github.mcroteau.web.SigninServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SigninServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>AuthServlet</servlet-name>
+        <servlet-class>io.github.mcroteau.web.AuthServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>AuthServlet</servlet-name>
         <url-pattern>/auth</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>SecuredServlet</servlet-name>
+        <servlet-class>io.github.mcroteau.web.SecuredServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SecuredServlet</servlet-name>
+        <url-pattern>/secured</url-pattern>
     </servlet-mapping>
 
     <filter>
