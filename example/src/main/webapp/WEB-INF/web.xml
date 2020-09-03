@@ -25,4 +25,10 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
+    <jsp-config>
+        <taglib>
+            <taglib-uri>http://metawerx.net/mapp/taglibs</taglib-uri>
+            <taglib-location>/.tld</taglib-location>
+        </taglib>
+    </jsp-config>
 </web-app>
