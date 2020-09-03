@@ -21,7 +21,7 @@ public class CacheFilter implements Filter {
         Cache.storeRequest(req);
         Cache.storeResponse(resp);
 
-        if(request != null && response != null && chain != null) {
+        if(request != null && response != null) {
             chain.doFilter(request, response);
         }
     }
