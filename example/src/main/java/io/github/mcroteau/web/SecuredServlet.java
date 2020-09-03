@@ -1,7 +1,10 @@
 package io.github.mcroteau.web;
 
+import io.github.mcroteau.Parakeet;
 import io.github.mcroteau.ParakeetFactory;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,10 +13,30 @@ import java.io.IOException;
 
 public class SecuredServlet extends HttpServlet {
 
+    Parakeet parakeet;
+    ParakeetFactory parakeetFactory;
+
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config);
+        ServletContext context = config.getServletContext();
+        ParakeetFactory parakeetFactory = (ParakeetFactory) context.getAttribute("parakeetFactory");
+        if(parakeetFactory == null) {
+            parakeetFactory = new ParakeetFactory();
+            getServletContext().setAttribute("parakeetFactory", parakeetFactory);
+            parakeet = parakeetFactory.getParakeet();
+        }
+    }
+
+    @Override
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        response.setContentType("text/html");
+        if(parakeet.isAuthenticated()){
+            req.getRequestDispatcher("/jsp/secured.jsp").forward(req, resp);
+        }else{
+            req.getRequestDispatcher("/jsp/unauthorized.jsp").forward(req, resp);
+        }
     }
+
 }

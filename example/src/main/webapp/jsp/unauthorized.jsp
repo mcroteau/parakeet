@@ -4,7 +4,7 @@
     <title>Unauthorized</title>
 </head>
 <body>
-    <h1>Unauthorized!</h1>
+    <h1>Unauthorized Yo!</h1>
     <a href="/b"></a>
 </body>
 </html>
