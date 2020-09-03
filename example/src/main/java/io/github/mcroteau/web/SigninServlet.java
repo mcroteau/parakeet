@@ -1,5 +1,6 @@
 package io.github.mcroteau.web;
 
+import io.github.mcroteau.Parakeet;
 import io.github.mcroteau.ParakeetFactory;
 
 import javax.servlet.ServletException;
@@ -13,6 +14,7 @@ import java.io.PrintWriter;
 
 public class SigninServlet extends HttpServlet {
 
+    Parakeet parakeet;
     ParakeetFactory parakeetFactory;
 
     public SigninServlet(){
@@ -20,6 +22,7 @@ public class SigninServlet extends HttpServlet {
         if(parakeetFactory == null) {
             parakeetFactory = new ParakeetFactory();
             getServletContext().setAttribute("parakeetFactory", parakeetFactory);
+            parakeet = parakeetFactory.getParakeet();
         }
     }
 
@@ -27,6 +30,7 @@ public class SigninServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        
         response.setContentType("text/html");
     }
 
