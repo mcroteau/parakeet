@@ -1,4 +1,4 @@
-<%@ taglib prefix="parakeet" uri="https://raw.githubusercontent.com/mcroteau/Parakeet/taglib/artifact/src/main/webapp/WEB-INF/parakeet.tld"%>
+<%@ taglib prefix="parakeet" uri="https://github.com/mcroteau/Parakeet/blob/taglib/artifact/META-INF/parakeet.tld"%>
 
 <parakeet:isAuthenticated>
     Welcome back!
