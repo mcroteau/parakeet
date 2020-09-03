@@ -15,6 +15,13 @@
     <description>Parakeet Tag Library</description>
 
     <tag>
+        <name>anonymousTag</name>
+        <tag-class>io.github.mcroteau.resources.tags.AnonymousTag</tag-class>
+        <body-content>JSP</body-content>
+        <description></description>
+    </tag>
+
+    <tag>
         <name>isAuthenticated</name>
         <tag-class>io.github.mcroteau.resources.tags.AuthenticatedTag</tag-class>
         <body-content>JSP</body-content>
@@ -22,8 +29,8 @@
     </tag>
 
     <tag>
-        <name>notAuthenticated</name>
-        <tag-class>io.github.mcroteau.resources.tagsTag</tag-class>
+        <name>usernameTag</name>
+        <tag-class>io.github.mcroteau.resources.tags.UsernameTag</tag-class>
         <body-content>JSP</body-content>
         <description></description>
     </tag>
