@@ -53,7 +53,7 @@ public class Parakeet {
             httpSession.setAttribute(Constants.USER_LOOKUP, username);
 
             ServletContext context = req.getServletContext();
-            context.setAttribute(Constants.ACCESSOR_LOOKUP, accessor);
+            context.setAttribute(Constants.PARAKEET_LOOKUP, this);
             sessions.put(httpSession.getId(), httpSession);
 
             return true;
@@ -73,7 +73,7 @@ public class Parakeet {
         if(session != null){
             session.removeAttribute(Constants.USER_LOOKUP);
             ServletContext context = req.getServletContext();
-            context.removeAttribute(Constants.ACCESSOR_LOOKUP);
+            context.removeAttribute(Constants.PARAKEET_LOOKUP);
             if(sessions.containsKey(session.getId())){
                 sessions.remove(session.getId());
             }

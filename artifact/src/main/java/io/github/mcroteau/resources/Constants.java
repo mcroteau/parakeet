@@ -7,7 +7,7 @@ public class Constants {
 
     public static final String COOKIE = "JSESSIONID";
     public static final String USER_LOOKUP = "user";
-    public static final String ACCESSOR_LOOKUP = "accessor";
+    public static final String PARAKEET_LOOKUP = "parakeet";
 
     public static String hash(String password){
         MessageDigest md = null;
