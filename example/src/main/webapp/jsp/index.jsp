@@ -1,6 +1,11 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="parakeet" uri="/META-INF/tags/parakeet.tld"%>
 
 <h1>Signin</h1>
+
+<c:if test="${not empty message}">
+    ${requestScope.message}
+</c:if>
 
 <form action="/b/auth" method="post">
     <label>Username</label>
