@@ -20,5 +20,5 @@
     </form>
 </parakeet:anonymous>
 <parakeet:isAuthenticated>
-    <a href="/b/signout">Signout</a>
+    <p>You're already signed in... <a href="/b/signout">Signout</a></p>
 </parakeet:isAuthenticated>
