@@ -34,11 +34,11 @@ public class AuthServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
+        System.out.println("signin p > " + username + " " + password + " " + parakeet);
         if(parakeet.login(username, password)){
             req.getRequestDispatcher("/jsp/secured.jsp").forward(req, resp);
         }else{
-            req.setAttribute("message", "Username and password don't match! Please try again.");
-            req.getRequestDispatcher("/jsp/siginin.jsp").forward(req, resp);
+            resp.sendRedirect("/b/");
         }
 
     }
