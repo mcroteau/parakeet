@@ -10,7 +10,7 @@ public class SigninServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("/jsp/signin.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/index.jsp").forward(request, response);
     }
 
 }

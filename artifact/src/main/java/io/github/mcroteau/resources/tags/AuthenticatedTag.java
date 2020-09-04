@@ -28,8 +28,6 @@ public class AuthenticatedTag extends TagSupport {
                 ServletContext context = req.getServletContext();
                 Parakeet parakeet = (Parakeet) context.getAttribute(Constants.PARAKEET_LOOKUP);
 
-                System.out.println("authenticated parakeet : " + parakeet);
-
                 if(parakeet == null) return TagSupport.SKIP_BODY;
 
                 if(parakeet.isAuthenticated()){

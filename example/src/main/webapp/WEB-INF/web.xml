@@ -11,6 +11,15 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SignoutServlet</servlet-name>
+        <servlet-class>io.github.mcroteau.web.SignoutServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SignoutServlet</servlet-name>
+        <url-pattern>/signout</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>AuthServlet</servlet-name>
@@ -42,10 +51,6 @@
         <filter-name>Parakeet</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
 
     <jsp-config>
         <taglib>

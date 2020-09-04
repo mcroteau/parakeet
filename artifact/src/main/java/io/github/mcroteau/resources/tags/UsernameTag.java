@@ -27,8 +27,6 @@ public class UsernameTag extends TagSupport {
                 ServletContext context = req.getServletContext();
                 Parakeet parakeet = (Parakeet) context.getAttribute(Constants.PARAKEET_LOOKUP);
 
-                System.out.println("username parakeet : " + parakeet);
-
                 if(parakeet == null) return TagSupport.SKIP_BODY;
 
                 if(parakeet.isAuthenticated()){

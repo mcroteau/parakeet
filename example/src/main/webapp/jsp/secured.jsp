@@ -1,9 +1,7 @@
 <%@ taglib prefix="parakeet" uri="/META-INF/tags/parakeet.tld"%>
 
 <parakeet:isAuthenticated>
-    Welcome back! <parakeet:usernameTag></parakeet:usernameTag>
+    Welcome back! <parakeet:username></parakeet:username>
     <h1>Secured Jsp</h1>
+    <a href="/b/signout">Signout</a>
 </parakeet:isAuthenticated>
-<parakeet:anonymousTag>
-    <h1>There is no way you got here...</h1>
-</parakeet:anonymousTag>
