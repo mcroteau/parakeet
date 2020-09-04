@@ -30,7 +30,7 @@ public class SignoutServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
         throws ServletException, IOException {
-        parakeet.signout();
+        parakeet.logout();
         req.setAttribute("message", "Successfully signed out!");
         req.getRequestDispatcher("/jsp/index.jsp").forward(req, resp);
     }

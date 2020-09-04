@@ -29,7 +29,7 @@ public class AnonymousTag extends TagSupport {
                 ServletContext context = req.getServletContext();
                 Parakeet parakeet = (Parakeet) context.getAttribute(Constants.PARAKEET_LOOKUP);
 
-                if(parakeet == null) return TagSupport.SKIP_BODY;
+                if(parakeet == null) return TagSupport.EVAL_BODY_INCLUDE;
 
                 if(parakeet.isAuthenticated()){
                     return TagSupport.SKIP_BODY;
