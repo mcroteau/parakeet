@@ -25,11 +25,11 @@ public class UsernameTag extends TagSupport {
 
             if(session != null) {
                 ServletContext context = req.getServletContext();
-                Accessor accessor = (Accessor) context.getAttribute(Constants.ACCESSOR_LOOKUP);
+                Parakeet parakeet = (Parakeet) context.getAttribute(Constants.PARAKEET_LOOKUP);
 
-                if(accessor == null) return TagSupport.SKIP_BODY;
+                System.out.println("username parakeet : " + parakeet);
 
-                Parakeet parakeet = new Parakeet(accessor);
+                if(parakeet == null) return TagSupport.SKIP_BODY;
 
                 if(parakeet.isAuthenticated()){
                     out.println(parakeet.getUser());
