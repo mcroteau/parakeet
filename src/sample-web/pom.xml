@@ -5,12 +5,6 @@
     <version>0.2-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <parent>
-        <groupId>io.github.mcroteau</groupId>
-        <artifactId>parent-modules</artifactId>
-        <version>0.2-SNAPSHOT</version>
-    </parent>
-
     <dependencies>
 
         <dependency>
