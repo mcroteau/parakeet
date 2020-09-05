@@ -6,7 +6,7 @@
 	<version>0.2-SNAPSHOT</version>
 
 	<name>parakeet</name>
-	<description>Parakeet is a small security framework that allows for quick securing of J2ee applications.</description>
+	<description>Parakeet is a small security J2ee plugin.</description>
 	<url>https://mcroteau.github.io/Parakeet/</url>
 
 	<licenses>
