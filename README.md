@@ -103,3 +103,20 @@ To log out:
 `parakeet.logout()`
 
 See, we told you it was cute.
+
+Oh, we added something new. Taglibs:
+
+You can now check authentication, and get user info 
+within jsp without scriptlets.
+
+First include tag reference:
+
+`<%@ taglib prefix="parakeet" uri="/META-INF/tags/parakeet.tld"%>`
+
+3 available tags:
+
+`<parakeet:anonymous>When you want anonymous content to be displayed</isAuthenticated>`
+`<parakeet:isAuthenticated>When only authenticated users can view</isAuthenticated>`
+`<parakeet:username>Display username</username>`
+
+Sample web app can be viewed within the project under `src/sample-web`
