@@ -8,5 +8,4 @@
 *.asc
 *.DS_Store
 output
-example/output
-artifact/output
+sample-web/output
