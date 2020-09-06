@@ -115,8 +115,14 @@ First include tag reference:
 
 3 available tags:
 
-`<parakeet:anonymous></isAuthenticated>` - Displays when user is anonymous & not authenticated
-`<parakeet:isAuthenticated></isAuthenticated>` - Displays content only when user is authenticated
-`<parakeet:username></username>` - Displays username
+Displays when user is anonymous & not authenticated
+`<parakeet:anonymous></isAuthenticated>`
+
+Displays content only when user is authenticated
+`<parakeet:isAuthenticated></isAuthenticated>`
+
+Displays username
+`<parakeet:username></username>`
+
 
 Sample web app can be viewed within the project under `src/sample-web`
