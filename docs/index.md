@@ -123,4 +123,4 @@ Displays content only when user is authenticated
 
 Sample web app can be viewed within the project under `src/sample-web`
 
-If you want a more, we recommend Apache Shiro!
+If you want a more, we recommend Apache Shiro! It's a security Bull Dog.
