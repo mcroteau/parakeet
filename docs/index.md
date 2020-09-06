@@ -109,7 +109,7 @@ First include tag reference:
 
 `<%@ taglib prefix="parakeet" uri="/META-INF/tags/parakeet.tld"%>`
 
-3 available tags:
+**3 available tags:**
 
 Displays when user is anonymous & not authenticated
 `<parakeet:anonymous></isAuthenticated>`
