@@ -102,7 +102,7 @@ To log out:
 
 `parakeet.logout()`
 
-See, we told you it was cute.
+### See, we told you it was cute!
 
 Oh, we added something new. Taglibs:
 
