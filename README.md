@@ -109,19 +109,24 @@ Oh, we added something new. Taglibs:
 You can now check authentication, and get user info 
 within jsp without scriptlets.
 
-First include tag reference:
+**First include tag reference:**
 
 `<%@ taglib prefix="parakeet" uri="/META-INF/tags/parakeet.tld"%>`
 
 **3 available tags:**
 
 Displays when user is anonymous & not authenticated
+
 `<parakeet:anonymous></isAuthenticated>`
 
+
 Displays content only when user is authenticated
+
 `<parakeet:isAuthenticated></isAuthenticated>`
 
+
 Displays username
+
 `<parakeet:username></username>`
 
 
