@@ -132,5 +132,5 @@ Displays username
 
 Sample web app can be viewed within the project under `src/sample-web`
 
-If you want a more, we recommend Apache Shiro! It's a security Bull Dog.
+If you want a more, we recommend Apache Shiro! It's a Bull Dog.
 
