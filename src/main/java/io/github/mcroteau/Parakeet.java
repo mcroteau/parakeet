@@ -40,6 +40,7 @@ public class Parakeet {
         String storedPassword = accessor.getPassword(username);
 
         if(!isAuthenticated() &&
+                storedPassword != null &&
                 storedPassword.equals(hashedPassword)){
 
             HttpServletRequest req = Cache.getRequest();
