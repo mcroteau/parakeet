@@ -56,6 +56,23 @@ public class Parakeet {
             context.setAttribute(Constants.PARAKEET_LOOKUP, this);
             sessions.put(httpSession.getId(), httpSession);
 
+            Cookie cookie = new Cookie("JSESSIONID", httpSession.getId());
+            cookie.setPath("/");
+
+            HttpServletResponse resp = Cache.getResponse();
+            resp.addCookie(cookie);
+
+            /**
+
+             mvn install:install-file \
+             -Dfile=parakeet-0.3-SNAPSHOT.jar \
+             -DgroupId=io.github.mcroteau \
+             -DartifactId=parakeet \
+             -Dversion=0.3 \
+             -Dpackaging=jar \
+             -DgeneratePom=true
+
+             */
             return true;
 
         }
