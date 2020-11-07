@@ -7,5 +7,6 @@
 *.releaseBackup
 *.asc
 *.DS_Store
+Notes.md
 output
 sample-web/output

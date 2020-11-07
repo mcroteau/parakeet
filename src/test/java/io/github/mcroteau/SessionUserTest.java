@@ -62,7 +62,6 @@ public class SessionUserTest {
                             log.info(parakeet.getUser() + ":" + mockUtil.getUser());
                         }
 
-
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
