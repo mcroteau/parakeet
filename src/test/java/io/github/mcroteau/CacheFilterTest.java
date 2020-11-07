@@ -6,6 +6,9 @@ import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 
+import org.easymock.EasyMock;
+import org.easymock.EasyMockSupport;
+import org.easymock.IMocksControl;
 import org.junit.jupiter.api.Test;
 import org.apache.log4j.Logger;
 import org.apache.log4j.BasicConfigurator;
@@ -16,12 +19,17 @@ import org.springframework.mock.web.MockHttpServletResponse;
 import io.github.mcroteau.resources.access.impl.MockAccessor;
 import io.github.mcroteau.resources.filters.CacheFilter;
 
+import javax.servlet.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import io.github.mcroteau.utils.AuthdIncrementor;
 import io.github.mcroteau.utils.TestConstants;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class CacheFilterTest {
+public class CacheFilterTest extends EasyMockSupport {
 
     private static Logger log = Logger.getLogger(CacheFilterTest.class);
 
@@ -43,13 +51,13 @@ public class CacheFilterTest {
                     try {
                         Parakeet parakeet = new Parakeet(mockAccessor);
 
-                        MockHttpServletResponse mockResp = new MockHttpServletResponse();
-                        MockHttpServletRequest mockReq = new MockHttpServletRequest();
-                        FilterChain mockFilterChain = Mockito.mock(FilterChain.class);
-                        FilterConfig mockFilterConfig = Mockito.mock(FilterConfig.class);
+                        HttpServletRequest req = new MockHttpServletRequest();
+                        HttpServletResponse resp = Mockito.mock(HttpServletResponse.class);
+                        FilterConfig config = Mockito.mock(FilterConfig.class);
+                        FilterChain filterChain = Mockito.mock(FilterChain.class);
 
-                        filter.init(mockFilterConfig);
-                        filter.doFilter(mockReq, mockResp, mockFilterChain);
+                        filter.init(config);
+                        filter.doFilter(req, resp, filterChain);
 
                         parakeet.login(TestConstants.USER, TestConstants.PASS);
 

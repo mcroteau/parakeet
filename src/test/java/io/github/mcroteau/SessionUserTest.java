@@ -5,6 +5,8 @@ import io.github.mcroteau.resources.filters.CacheFilter;
 import io.github.mcroteau.utils.TestConstants;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
+import org.easymock.EasyMock;
+import org.easymock.EasyMockSupport;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.mock.web.MockHttpServletRequest;
@@ -12,6 +14,10 @@ import org.springframework.mock.web.MockHttpServletResponse;
 
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -37,17 +43,19 @@ public class SessionUserTest {
             Thread thread = new Thread(){
                 public void run() {
                     try {
-                        MockHttpServletResponse mockResp = new MockHttpServletResponse();
-                        MockHttpServletRequest mockReq = new MockHttpServletRequest();
-                        FilterChain mockFilterChain = Mockito.mock(FilterChain.class);
-                        FilterConfig mockFilterConfig = Mockito.mock(FilterConfig.class);
 
-                        filter.init(mockFilterConfig);
-                        filter.doFilter(mockReq, mockResp, mockFilterChain);
+                        HttpServletRequest req = new MockHttpServletRequest();
+                        HttpServletResponse resp = Mockito.mock(HttpServletResponse.class);
+
+                        FilterChain filterChain = Mockito.mock(FilterChain.class);
+                        FilterConfig config = Mockito.mock(FilterConfig.class);
+
+                        filter.init(config);
+                        filter.doFilter(req, resp, filterChain);
 
                         parakeet.login(mockUtil.getUser(), TestConstants.PASS);
 
-                        filter.doFilter(mockReq, mockResp, mockFilterChain);
+                        filter.doFilter(req, resp, filterChain);
 
                         if(!parakeet.getUser().equals(mockUtil.getUser())){
                             mockUtil.incrementCount();
