@@ -3,7 +3,7 @@
 
 <h1>Signin</h1>
 
-<parakeet:anonymous>
+<parakeet:isAnonymous>
 
     <c:if test="${not empty requestScope.message}">
        <p><c:out value="${message}"/></p>
@@ -24,7 +24,7 @@
 
         <input type="submit" value="Signin"/>
     </form>
-</parakeet:anonymous>
+</parakeet:isAnonymous>
 <parakeet:isAuthenticated>
     <p>You're already signed in... <a href="/b/signout">Signout</a></p>
 </parakeet:isAuthenticated>

@@ -17,7 +17,7 @@ Update `web.xml`, add CacheFilter declaration:
 ```
 <filter>
     <filter-name>Parakeet</filter-name>
-    <filter-class>io.github.mcroteau.resources.filters.CacheFilter</filter-class>
+    <filter-class>xyz.strongperched.resources.filters.ParakeetFilter</filter-class>
 </filter>
 
 <filter-mapping>
@@ -34,7 +34,7 @@ Spring Example:
 ```
 package xyz.ioc.accessor;
 
-import io.github.mcroteau.resources.access.Accessor;
+import xyz.strongperched.resources.access.Accessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import xyz.ioc.dao.AccountDao;
 import xyz.ioc.model.Account;
@@ -85,7 +85,7 @@ or if spring project define your beans as such:
 ```
 <bean id="jdbcAccessor" class="com.project.accessor.JdbcAccessor"/>
 
-<bean id="parakeet" class="io.github.mcroteau.Parakeet" scope="singleton">
+<bean id="parakeet" class="xyz.strongperched.resources.Parakeet" scope="singleton">
     <constructor-arg name="accessor" ref="jdbcAccessor"/>
 </bean>
 ```

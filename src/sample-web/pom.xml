@@ -20,9 +20,9 @@
         </dependency>
 
         <dependency>
-            <groupId>io.github.mcroteau</groupId>
+            <groupId>xyz.strongperched</groupId>
             <artifactId>parakeet</artifactId>
-            <version>0.2-SNAPSHOT</version>
+            <version>0.4-SNAPSHOT</version>
         </dependency>
 
     </dependencies>
