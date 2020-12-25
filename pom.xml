@@ -3,7 +3,7 @@
 	<groupId>io.github.mcroteau</groupId>
 	<artifactId>parakeet</artifactId>
 	<packaging>jar</packaging>
-	<version>0.4</version>
+	<version>0.5-SNAPSHOT</version>
 
 	<name>parakeet</name>
 	<description>Parakeet is a small security J2ee plugin.</description>
@@ -207,7 +207,7 @@
 		<connection>scm:git:git://github.com/mcroteau/Parakeet.git</connection>
 		<developerConnection>scm:git:git@github.com:mcroteau/Parakeet.git</developerConnection>
 		<url>https://github.com/mcroteau/Parakeet</url>
-		<tag>v0.4</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<distributionManagement>
