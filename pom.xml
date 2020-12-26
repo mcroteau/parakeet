@@ -3,7 +3,7 @@
 	<groupId>xyz.strongperched</groupId>
 	<artifactId>parakeet</artifactId>
 	<packaging>jar</packaging>
-	<version>0.5</version>
+	<version>0.5-SNAPSHOT</version>
 
 	<name>Parakeet</name>
 	<description>Parakeet is a small security J2ee plugin.</description>
