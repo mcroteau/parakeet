@@ -175,4 +175,10 @@ public class Parakeet {
         return true;
     }
 
+    ////////////////// same as perch //////////////////////
+    public static boolean configure(Accessor accessor){
+        Parakeet.accessor = accessor;
+        return true;
+    }
+
 }
