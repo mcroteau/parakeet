@@ -74,9 +74,9 @@ Add cookie xml declaration just in case the container
 doesn't pick up the cookie on authentication. Add to the **web.xml**
 
 ```
-	<session-config>
-		<tracking-mode>COOKIE</tracking-mode>
-	</session-config>
+<session-config>
+    <tracking-mode>COOKIE</tracking-mode>
+</session-config>
 ```
 
 Finally, wire it up either by using Spring:
