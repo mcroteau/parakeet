@@ -138,7 +138,7 @@ Displays username
 `<parakeet:username></username>`
 
 
-Sample web app can be viewed within the project under `src/sample-web`
+A very basic sample servlet app can be viewed within the project under `sample-web`
 
 If you want a more, we recommend Apache Shiro! It's a Bull Dog.
 
