@@ -2,7 +2,7 @@
 
 ## A cute J2ee security framework
 
-Parakeet is a small Open Source security plugin that allows for quick securing of J2ee applications.
+Parakeet is a small Open Source security plugin that boasts quick easy setup.
 
 #### Installation
 
@@ -10,13 +10,13 @@ Add dependency:
 
 ```
 <dependency>
-    <groupId>io.github.mcroteau</groupId>
+    <groupId>xyz.strongperched</groupId>
     <artifactId>parakeet</artifactId>
-    <version>0.1</version>
+    <version>0.5</version>
 </dependency>
 ```
 
-Update `web.xml`, add CacheFilter declaration:
+Update `web.xml`, add ParakeetFilter:
 
 ```
 <filter>
@@ -30,18 +30,18 @@ Update `web.xml`, add CacheFilter declaration:
 </filter-mapping>
 ```
 
-Create an Accessor, the class
+Create an `Accessor`, the class
 that provides data to Parakeet.
 
 Example:
 
 ```
-package xyz.ioc.accessor;
+package xyz.strongperched.accessor;
 
 import xyz.strongperched.resources.access.Accessor;
 import org.springframework.beans.factory.annotation.Autowired;
-import xyz.ioc.dao.AccountDao;
-import xyz.ioc.model.Account;
+import xyz.strongperched.dao.AccountDao;
+import xyz.strongperched.model.Account;
 
 import java.util.Set;
 
@@ -79,37 +79,36 @@ doesn't pick up the cookie on authentication. Add to the **web.xml**
 	</session-config>
 ```
 
-Finally wire it up either by:
-
-`Parakeet parakeet = new Parakeet(new JdcbAccessor());`
-
-or if spring project define your beans as such:
+Finally, wire it up either by using Spring:
 
 ```
-<bean id="jdbcAccessor" class="com.project.accessor.JdbcAccessor"/>
-
-<bean id="parakeet" class="xyz.strongperched.resources.Parakeet" scope="singleton">
-    <constructor-arg name="accessor" ref="jdbcAccessor"/>
-</bean>
+<bean class="xyz.strongperched.accessor.JdbcAccessor" scope="singleton"/>
 ```
 
-### Your project is configured. 
+Then somewhere in your project during startup call `.configure()` passing 
+in the Autowired JdbcAccessor.
+
+```
+Parakeet.configure(jdbcAccessor)
+```
+
+### Parakeet has your JdbcAccessor and your project is configured. 
 
 Now you can use can authenticate your user via :
 
-`parakeet.login()`
+`Parakeet.login()`
 
-And you'll have access to the following methods:
+You'll have access to the following methods:
 
-`parakeet.isAuthenticated()`
+`Parakeet.isAuthenticated()`
 
-`parakeet.hasRole(role)`
+`Parakeet.hasRole(role)`
 
-`parakeet.hasPermission(permission)`
+`Parakeet.hasPermission(permission)`
 
 To log out:
 
-`parakeet.logout()`
+`Parakeet.logout()`
 
 ### See, we told you it was cute!
 
@@ -126,7 +125,7 @@ within jsp without scriptlets.
 
 Displays when user is anonymous & not authenticated
 
-`<parakeet:anonymous></isAuthenticated>`
+`<parakeet:isAnonymous></isAnonymous>`
 
 
 Displays content only when user is authenticated
