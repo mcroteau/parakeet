@@ -1,5 +1,11 @@
 ### Parakeet is a small Open Source security plugin that boasts quick easy setup.
 
+Parakeet has been tested with :
+
+`javax.servlet:javax.servlet-api:4.0.1`
+
+and `Tomcat 9`.
+
 #### Installation
 
 Add dependency:
