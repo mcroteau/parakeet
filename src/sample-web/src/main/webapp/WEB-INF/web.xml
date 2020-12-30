@@ -6,7 +6,7 @@
 
     <servlet>
         <servlet-name>SigninServlet</servlet-name>
-        <servlet-class>io.github.mcroteau.web.SigninServlet</servlet-class>
+        <servlet-class>xyz.strongperched.web.SigninServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -16,7 +16,7 @@
 
     <servlet>
         <servlet-name>SignoutServlet</servlet-name>
-        <servlet-class>io.github.mcroteau.web.SignoutServlet</servlet-class>
+        <servlet-class>xyz.strongperched.web.SignoutServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -26,7 +26,7 @@
 
     <servlet>
         <servlet-name>AuthServlet</servlet-name>
-        <servlet-class>io.github.mcroteau.web.AuthServlet</servlet-class>
+        <servlet-class>xyz.strongperched.web.AuthServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -37,7 +37,7 @@
 
     <servlet>
         <servlet-name>SecuredServlet</servlet-name>
-        <servlet-class>io.github.mcroteau.web.SecuredServlet</servlet-class>
+        <servlet-class>xyz.strongperched.web.SecuredServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

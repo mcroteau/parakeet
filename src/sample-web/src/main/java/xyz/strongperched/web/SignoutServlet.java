@@ -1,5 +1,6 @@
 package xyz.strongperched.web;
 
+import xyz.strongperched.Parakeet;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,9 +17,8 @@ public class SignoutServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
         throws ServletException, IOException {
-        Parkaeet.logout();
+        Parakeet.logout();
         req.setAttribute("message", "Successfully signed out!");
         req.getRequestDispatcher("/jsp/index.jsp").forward(req, resp);
     }
-
 }

@@ -6,12 +6,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import xyz.strongperched.Parakeet;
+import xyz.strongperched.resources.access.impl.MockAccessor;
 
 public class AuthServlet extends HttpServlet {
 
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
+        Parakeet.perch(new MockAccessor());
     }
 
     @Override

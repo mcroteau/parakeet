@@ -1,7 +1,6 @@
 package xyz.strongperched.web;
 
-import io.github.mcroteau.Parakeet;
-import io.github.mcroteau.ParakeetFactory;
+import xyz.strongperched.Parakeet;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
@@ -18,8 +17,6 @@ public class SecuredServlet extends HttpServlet {
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
     }
-
-
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
