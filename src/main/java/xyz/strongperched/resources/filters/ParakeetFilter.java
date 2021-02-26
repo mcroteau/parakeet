@@ -25,12 +25,6 @@ public class ParakeetFilter implements Filter {
         Cache.storeResponse(resp);
 
         if(request != null && response != null) {
-            HttpSession httpSession = req.getSession(false);
-            if(httpSession != null) {
-                Cookie cookie = new Cookie(Constants.COOKIE, httpSession.getId());
-                cookie.setPath("/");
-                resp.addCookie(cookie);
-            }
             chain.doFilter(request, response);
         }
     }
