@@ -1,4 +1,4 @@
-package xyz.strongperched;
+package xyz.goioc;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -10,9 +10,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.Map;
 import java.util.Set;
 
-import xyz.strongperched.resources.Cache;
-import xyz.strongperched.resources.Constants;
-import xyz.strongperched.resources.access.Accessor;
+import xyz.goioc.resources.Cache;
+import xyz.goioc.resources.Constants;
+import xyz.goioc.resources.access.Accessor;
 
 public class Parakeet {
 
@@ -170,12 +170,12 @@ public class Parakeet {
         return passwordHashed.toString();
     }
 
+    ////////////////// same as configure //////////////////////
     public static boolean perch(Accessor accessor){
         Parakeet.accessor = accessor;
         return true;
     }
 
-    ////////////////// same as perch //////////////////////
     public static boolean configure(Accessor accessor){
         Parakeet.accessor = accessor;
         return true;

@@ -21,7 +21,7 @@ Update `web.xml`, add ParakeetFilter:
 ```
 <filter>
     <filter-name>Parakeet</filter-name>
-    <filter-class>xyz.strongperched.resources.filters.ParakeetFilter</filter-class>
+    <filter-class>xyz.goioc.resources.filters.ParakeetFilter</filter-class>
 </filter>
 
 <filter-mapping>
@@ -38,7 +38,7 @@ Example:
 ```
 package xyz.strongperched.accessor;
 
-import xyz.strongperched.resources.access.Accessor;
+import xyz.goioc.resources.access.Accessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import xyz.strongperched.dao.AccountDao;
 import xyz.strongperched.model.Account;

@@ -1,7 +1,7 @@
-package xyz.strongperched.resources.access.impl;
+package xyz.goioc.resources.access.impl;
 
-import xyz.strongperched.Parakeet;
-import xyz.strongperched.resources.access.Accessor;
+import xyz.goioc.Parakeet;
+import xyz.goioc.resources.access.Accessor;
 
 import java.util.HashSet;
 import java.util.Set;

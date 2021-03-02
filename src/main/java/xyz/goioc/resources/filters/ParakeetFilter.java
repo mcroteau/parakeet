@@ -1,31 +1,32 @@
-package xyz.strongperched.resources.filters;
+package xyz.goioc.resources.filters;
+
+import xyz.goioc.resources.Cache;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class CorsFilter implements Filter {
-
+public class ParakeetFilter implements Filter {
 
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException { }
+    public void init(FilterConfig config) throws ServletException { }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
 
-        resp.addHeader("Access-Control-Allow-Origin", "*");
-        resp.addHeader("Access-Control-Allow-Methods","GET, OPTIONS, HEAD, PUT, POST");
+        Cache.storeRequest(req);
+        Cache.storeResponse(resp);
 
-        if (req.getMethod().equals("OPTIONS")) {
-            resp.setStatus(HttpServletResponse.SC_ACCEPTED);
+        if(request != null && response != null) {
+            chain.doFilter(request, response);
         }
-
-        chain.doFilter(request, response);
     }
 
     @Override
     public void destroy() { }
+
 }

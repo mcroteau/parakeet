@@ -1,4 +1,4 @@
-package xyz.strongperched.resources.access;
+package xyz.goioc.resources.access;
 
 import java.util.Set;
 

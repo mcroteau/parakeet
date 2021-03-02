@@ -1,8 +1,8 @@
-package xyz.strongperched;
+package xyz.goioc;
 
-import xyz.strongperched.resources.access.impl.MockAccessor;
-import xyz.strongperched.resources.filters.ParakeetFilter;
-import xyz.strongperched.utils.TestConstants;
+import xyz.goioc.resources.access.impl.MockAccessor;
+import xyz.goioc.resources.filters.ParakeetFilter;
+import xyz.goioc.utils.TestConstants;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Test;

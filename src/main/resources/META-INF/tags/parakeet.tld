@@ -12,21 +12,21 @@
 
     <tag>
         <name>isAnonymous</name>
-        <tag-class>xyz.strongperched.resources.tags.AnonymousTag</tag-class>
+        <tag-class>xyz.goioc.resources.tags.AnonymousTag</tag-class>
         <body-content>JSP</body-content>
         <description></description>
     </tag>
 
     <tag>
         <name>isAuthenticated</name>
-        <tag-class>xyz.strongperched.resources.tags.AuthenticatedTag</tag-class>
+        <tag-class>xyz.goioc.resources.tags.AuthenticatedTag</tag-class>
         <body-content>JSP</body-content>
         <description></description>
     </tag>
 
     <tag>
         <name>username</name>
-        <tag-class>xyz.strongperched.resources.tags.UsernameTag</tag-class>
+        <tag-class>xyz.goioc.resources.tags.UsernameTag</tag-class>
         <body-content>empty</body-content>
         <description></description>
     </tag>

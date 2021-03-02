@@ -1,7 +1,6 @@
-package xyz.strongperched.resources.tags;
+package xyz.goioc.resources.tags;
 
-import xyz.strongperched.Parakeet;
-import xyz.strongperched.resources.Constants;
+import xyz.goioc.Parakeet;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;

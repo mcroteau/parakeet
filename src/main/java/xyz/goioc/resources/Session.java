@@ -1,4 +1,4 @@
-package xyz.strongperched.resources;
+package xyz.goioc.resources;
 
 public class Session {
 

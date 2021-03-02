@@ -1,4 +1,4 @@
-package xyz.strongperched.utils;
+package xyz.goioc.utils;
 
 public class TestConstants {
 

@@ -1,4 +1,4 @@
-package xyz.strongperched.resources;
+package xyz.goioc.resources;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
