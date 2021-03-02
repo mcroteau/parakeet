@@ -14,7 +14,7 @@ Add dependency:
 <dependency>
     <groupId>xyz.goioc</groupId>
     <artifactId>parakeet</artifactId>
-    <version>0.5</version>
+    <version>0.7</version>
 </dependency>
 ```
 
