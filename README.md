@@ -4,13 +4,19 @@
 
 Parakeet is a small Open Source security plugin that boasts quick easy setup.
 
+Parakeet has been tested with :
+
+`javax.servlet:javax.servlet-api:4.0.1`
+
+and `Tomcat 9`.
+
 #### Installation
 
 Add dependency:
 
 ```
 <dependency>
-    <groupId>xyz.strongperched</groupId>
+    <groupId>xyz.goioc</groupId>
     <artifactId>parakeet</artifactId>
     <version>0.5</version>
 </dependency>
@@ -36,12 +42,12 @@ that provides data to Parakeet.
 Example:
 
 ```
-package xyz.strongperched.accessor;
+package xyz.goioc.accessor;
 
 import xyz.goioc.resources.access.Accessor;
 import org.springframework.beans.factory.annotation.Autowired;
-import xyz.strongperched.dao.AccountDao;
-import xyz.strongperched.model.Account;
+import xyz.goioc.dao.AccountDao;
+import xyz.goioc.model.Account;
 
 import java.util.Set;
 
@@ -82,7 +88,7 @@ doesn't pick up the cookie on authentication. Add to the **web.xml**
 Finally, wire it up either by using Spring:
 
 ```
-<bean class="xyz.strongperched.accessor.JdbcAccessor" scope="singleton"/>
+<bean class="xyz.goioc.accessor.JdbcAccessor" scope="singleton"/>
 ```
 
 Then somewhere in your project during startup call `.configure()` passing 
