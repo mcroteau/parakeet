@@ -74,12 +74,8 @@
 			<version>1.2.16</version>
 			<scope>test</scope>
 		</dependency>
-<<<<<<< HEAD
-		
-=======
->>>>>>> 06bc8a4357b6e5247f86650282b49170148effb4
 	</dependencies>
-
+	
 		<profiles>
 			<profile>
 			<id>release-sign-artifacts</id>
