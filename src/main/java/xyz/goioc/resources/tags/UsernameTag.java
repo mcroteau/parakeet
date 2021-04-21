@@ -22,7 +22,7 @@ public class UsernameTag extends TagSupport {
             HttpSession session = req.getSession(false);
 
             if(session != null) {
-                ServletContext context = req.getServletContext();
+                ServletContext context = session.getServletContext();
 
                 if(Parakeet.isAuthenticated()){
                     out.println(Parakeet.getUser());
