@@ -1,4 +1,6 @@
-### Parakeet is a small Open Source security plugin that boasts quick easy setup.
+# Parakeet 
+
+Parakeet is a small J2ee Open Source security framework / plugin that boasts quick easy setup.
 
 #### Installation
 

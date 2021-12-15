@@ -1,9 +1,7 @@
 Parakeet 
-============
+======
 
-## A small j2ee security framework
-
-Parakeet is a small Open Source security plugin that boasts quick easy setup.
+Parakeet is a small J2ee Open Source security framework / plugin that boasts quick easy setup.
 
 #### Installation
 
@@ -44,9 +42,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import xyz.goioc.dao.AccountDao;
 import xyz.goioc.model.Account;
 
+import qio.annotate.Inject;
+
 import java.util.Set;
 
-import qio.annotate.Inject;
 
 public class JdbcAccessor implements Accessor {
 
