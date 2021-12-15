@@ -23,7 +23,7 @@ Update `web.xml`, add ParakeetFilter:
 ```
 <filter>
     <filter-name>Parakeet</filter-name>
-    <filter-class>xyz.goioc.resources.filters.ParakeetFilter</filter-class>
+    <filter-class>ParakeetFilter</filter-class>
 </filter>
 
 <filter-mapping>
@@ -40,7 +40,7 @@ Example:
 ```
 package xyz.goioc.accessor;
 
-import xyz.goioc.resources.access.Accessor;
+import Accessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import xyz.goioc.dao.AccountDao;
 import xyz.goioc.model.Account;

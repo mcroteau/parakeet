@@ -1,4 +1,4 @@
-package xyz.goioc;
+package perched;
 
 import java.io.IOException;
 
@@ -13,14 +13,14 @@ import org.apache.log4j.BasicConfigurator;
 import org.mockito.Mockito;
 import org.springframework.mock.web.MockHttpServletRequest;
 
-import xyz.goioc.resources.access.impl.MockAccessor;
-import xyz.goioc.resources.filters.ParakeetFilter;
+import perched.support.access.impl.MockAccessor;
+import perched.support.filters.ParakeetFilter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import xyz.goioc.utils.AuthdIncrementor;
-import xyz.goioc.utils.TestConstants;
+import perched.utils.AuthdIncrementor;
+import perched.utils.TestConstants;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

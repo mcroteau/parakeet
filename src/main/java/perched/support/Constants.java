@@ -1,4 +1,4 @@
-package xyz.goioc.resources;
+package perched.support;
 
 public class Constants {
     public static final String HASH_256 = "SHA-256";

@@ -1,6 +1,6 @@
-package xyz.goioc.resources.tags;
+package perched.support.tags;
 
-import xyz.goioc.Parakeet;
+import perched.Parakeet;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;

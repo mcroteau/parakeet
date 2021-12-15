@@ -1,4 +1,4 @@
-package xyz.goioc.resources;
+package perched.support;
 
 public class Session {
 

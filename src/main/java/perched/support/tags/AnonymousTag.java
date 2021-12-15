@@ -1,15 +1,14 @@
-package xyz.goioc.resources.tags;
+package perched.support.tags;
 
-import xyz.goioc.Parakeet;
+import perched.Parakeet;
 
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.TagSupport;
 
-public class UsernameTag extends TagSupport {
+public class AnonymousTag extends TagSupport {
 
     @Override
     public int doStartTag() throws JspException {
@@ -22,17 +21,20 @@ public class UsernameTag extends TagSupport {
             HttpSession session = req.getSession(false);
 
             if(session != null) {
-                ServletContext context = session.getServletContext();
 
                 if(Parakeet.isAuthenticated()){
-                    out.println(Parakeet.getUser());
+                    return TagSupport.SKIP_BODY;
+                }else{
+                    return TagSupport.EVAL_BODY_INCLUDE;
                 }
+
+            }else{
+                return TagSupport.EVAL_BODY_INCLUDE;
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        return TagSupport.SKIP_BODY;
+        return TagSupport.EVAL_BODY_INCLUDE;
     }
 }

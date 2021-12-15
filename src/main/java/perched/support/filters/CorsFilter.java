@@ -1,4 +1,4 @@
-package xyz.goioc.resources.filters;
+package perched.support.filters;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;

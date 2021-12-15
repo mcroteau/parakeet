@@ -1,4 +1,4 @@
-package xyz.goioc.resources.access;
+package perched.support.access;
 
 import java.util.Set;
 

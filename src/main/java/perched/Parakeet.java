@@ -1,4 +1,4 @@
-package xyz.goioc;
+package perched;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -10,9 +10,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.Map;
 import java.util.Set;
 
-import xyz.goioc.resources.Cache;
-import xyz.goioc.resources.Constants;
-import xyz.goioc.resources.access.Accessor;
+import perched.support.Cache;
+import perched.support.Constants;
+import perched.support.access.Accessor;
 
 public class Parakeet {
 

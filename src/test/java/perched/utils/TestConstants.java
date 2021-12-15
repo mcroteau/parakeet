@@ -1,4 +1,4 @@
-package xyz.goioc.utils;
+package perched.utils;
 
 public class TestConstants {
 

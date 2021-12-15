@@ -1,6 +1,6 @@
-package xyz.goioc.resources.filters;
+package perched.support.filters;
 
-import xyz.goioc.resources.Cache;
+import perched.support.Cache;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;

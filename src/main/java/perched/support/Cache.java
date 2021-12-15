@@ -1,4 +1,4 @@
-package xyz.goioc.resources;
+package perched.support;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
