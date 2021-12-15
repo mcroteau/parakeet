@@ -43,8 +43,8 @@ import java.util.Set;
 
 public class JdbcAccessor implements Accessor {
 
-    @Autowired
-    private AccountDao accountDao;
+    @Inject
+    AccountDao accountDao;
 
     public String getPassword(String user){
         String password = accountDao.getAccountPassword(user);
