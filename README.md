@@ -46,6 +46,8 @@ import xyz.goioc.model.Account;
 
 import java.util.Set;
 
+import qio.annotate.Inject;
+
 public class JdbcAccessor implements Accessor {
 
     @Inject

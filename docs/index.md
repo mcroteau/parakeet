@@ -39,7 +39,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import xyz.goioc.dao.AccountDao;
 import xyz.goioc.model.Account;
 
+import qio.annotate.Inject;
+
 import java.util.Set;
+
 
 public class JdbcAccessor implements Accessor {
 
